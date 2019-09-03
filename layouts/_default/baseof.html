@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ .Title }}</title>
+    {{ $cssOpts := (dict "includePaths" (slice "node_modules/bulma" "assets/scss")) }}
+    {{ $css := resources.Get "sass/main.scss" | toCSS $cssOpts | postCSS (dict "config" "postcss.config.js" "noMap" true) | minify }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+</body>
+</html>

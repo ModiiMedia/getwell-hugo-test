@@ -1,0 +1,6 @@
+public
+content
+node_modules
+resources
+.env
+config.yaml

@@ -1,0 +1,32 @@
+@import 'bulma.sass';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+header {
+    background: $text;
+    padding: 1rem 0;
+    .logo {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: bold;
+        a {
+            color: white;
+            &:hover {
+                color: white;
+            }    
+        }
+    }    
+}

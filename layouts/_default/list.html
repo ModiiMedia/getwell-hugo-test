@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <main class='section'>
+        <div class="container">
+            <div class="columns is-multiline">
+                {{ range (.Paginator 20).Pages }}
+                    <div class="column is-one-quarter">
+                        <a href="{{ .RelPermalink }}">
+                            {{ .Params.full_name }}
+                        </a>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </main>
+{{ end }}
